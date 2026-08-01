@@ -1,0 +1,109 @@
+Created At: 2026-08-01T10:44:02Z
+Completed At: 2026-08-01T10:44:03Z
+File Path: `file:///Users/sarthak/Study/Sarthak_Portfolio/Sarthak_Website/src/index.css`
+Total Lines: 787
+Total Bytes: 15466
+Showing lines 20 to 120
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+20:   scroll-behavior: smooth;
+21:   font-family: "Mona Sans", sans-serif;
+22:   margin: 0;
+23:   padding: 0;
+24: }
+25: 
+26: section {
+27:   width: 100dvw;
+28: }
+29: 
+30: @theme {
+31:   --font-sans: "Mona Sans", sans-serif;
+32:   --color-white-50: #d9ecff;
+33:   --color-black-50: #1c1c21;
+34:   --color-black-100: #0e0e10;
+35:   --color-black-200: #282732;
+36:   --color-blue-50: #839cb5;
+37:   --color-blue-100: #2d2d38;
+38: }
+39: 
+40: /* Custom utilities & components */
+41: 
+42: .flex-center {
+43:   @apply flex justify-center items-center;
+44: }
+45: 
+46: .flex-col-center {
+47:   @apply flex flex-col justify-center items-center;
+48: }
+49: 
+50: .padding-x {
+51:   @apply px-5 md:px-10;
+52: }
+53: 
+54: .padding-x-lg {
+55:   @apply px-5 md:px-20;
+56: }
+57: 
+58: .section-padding {
+59:   @apply px-5 md:px-10 md:mt-40 mt-20;
+60: }
+61: 
+62: .card-border {
+63:   @apply border border-black-50 bg-black-100;
+64: }
+65: 
+66: /* 3D STARTUP APP HERO LAYOUT */
+67: .image-gradient {
+68:   position: absolute;
+69:   top: 0;
+70:   right: 0;
+71:   opacity: 0.5;
+72:   z-index: 1;
+73:   pointer-events: none;
+74: }
+75: 
+76: .layer-blur {
+77:   height: 0;
+78:   width: 30rem;
+79:   position: absolute;
+80:   top: 20%;
+81:   right: 0;
+82:   box-shadow: 0 0 700px 15px white;
+83:   rotate: -30deg;
+84:   z-index: 1;
+85:   pointer-events: none;
+86: }
+87: 
+88: .hero-container {
+89:   width: 100%;
+90:   margin: 0 auto;
+91:   padding: 0 2rem;
+92:   position: relative;
+93:   overflow: hidden;
+94:   min-height: 100vh;
+95:   display: flex;
+96:   flex-direction: column;
+97: }
+98: 
+99: .hero-header {
+100:   display: flex;
+101:   justify-content: space-between;
+102:   align-items: center;
+103:   padding: 1.5rem 5rem;
+104:   position: relative;
+105:   z-index: 100;
+106: }
+107: 
+108: .hero-header h1.logo {
+109:   margin: 0;
+110:   font-size: 3rem;
+111:   font-weight: 300;
+112:   letter-spacing: 0.1em;
+113: }
+114: 
+115: .hero-header nav {
+116:   display: flex;
+117:   align-items: center;
+118:   gap: 3rem;
+119: }
+120: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
