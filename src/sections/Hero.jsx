@@ -74,7 +74,7 @@ const Hero = () => {
                 data-aos-duration="1500"
                 className="tag-box"
               >
-                <div className="tag text-white">INTRODUCING ⩟</div>
+                <div className="tag text-white">somehow a mechanical major ⚙️</div>
               </div>
 
               <h1
@@ -84,10 +84,27 @@ const Hero = () => {
                 data-aos-offset="0"
                 data-aos-duration="2000"
                 className="text-white"
+                style={{
+                  margin: "0.5rem 0 1.8rem 0",
+                  display: "block",
+                  overflow: "visible"
+                }}
               >
-                ENGINEERING FOR
-                <br />
-                CREATIVE MINDS
+                <span
+                  style={{
+                    fontFamily: '"Caveat", cursive',
+                    fontSize: "clamp(3.8rem, 9vw, 6.2rem)",
+                    fontWeight: "500",
+                    textTransform: "none",
+                    letterSpacing: "0.01em",
+                    transform: "rotate(-3deg)",
+                    transformOrigin: "left center",
+                    color: "#fff",
+                    display: "inline-block"
+                  }}
+                >
+                  hi! i am sarthak
+                </span>
               </h1>
 
               <p
@@ -97,8 +114,9 @@ const Hero = () => {
                 data-aos-offset="0"
                 data-aos-duration="2500"
                 className="hero-description"
+                style={{ textTransform: "none", fontSize: "1.1rem", lineHeight: "1.7" }}
               >
-                Hi, I'm Sarthak Fulzele. I build interactive 3D web applications, full-stack architectures, and high-performance digital experiences. Welcome to my autobiography.
+                a mechanical engineer at IIT Kharagpur who spends 99% of his time building voice AI agents, real-time music rooms, and scalable microservices instead of doing actual mechanical engineering. yes, the cognitive dissonance is real. if you need someone to orchestrate kubernetes pods or fine-tune multimodal models while pretending they know how a turbine works, i'm your guy.
               </p>
 
               <div
