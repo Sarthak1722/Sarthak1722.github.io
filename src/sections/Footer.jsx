@@ -86,8 +86,27 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="footer-bottom">
-              <p>© {new Date().getFullYear()} Sarthak Fulzele. All rights reserved.</p>
+            <div className="footer-bottom flex flex-col gap-2">
+              <div className="flex flex-wrap gap-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+                <a href="mailto:sarthakfulzele2209@gmail.com" className="hover:text-yellow-400 transition-colors">
+                  Email
+                </a>
+                <span>•</span>
+                <a href="https://github.com/Sarthak" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
+                  GitHub
+                </a>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/Sarthak-Fulzele" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
+                  LinkedIn
+                </a>
+                <span>•</span>
+                <a href="tel:+917721930950" className="hover:text-yellow-400 transition-colors">
+                  +91-7721930950
+                </a>
+              </div>
+              <p className="text-sm text-gray-500 font-medium">
+                © {new Date().getFullYear()} Sarthak Fulzele. All rights reserved.
+              </p>
             </div>
           </div>
         </div>
