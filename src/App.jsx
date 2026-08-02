@@ -3,6 +3,7 @@ import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import TechStack from "./sections/TechStack";
+import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import LoadingScreen from "./components/LoadingScreen";
 
@@ -17,6 +18,7 @@ function App() {
         <Projects />
         <Experience />
         <TechStack />
+        <Contact />
         <Footer />
       </div>
     </>

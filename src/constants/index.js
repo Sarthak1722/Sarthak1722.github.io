@@ -19,6 +19,43 @@ export const navLinks = [
 
 export const myProjects = [
   {
+    title: 'Jamify - Real-Time Music & Chat Platform',
+    desc: 'Jamify is a real-time collaborative music platform featuring shared listening rooms with synchronized audio playback. It handles secure user accounts, chat rooms, typing indicators, and room activity state.',
+    subdesc:
+      'Developed with React, Redux Toolkit, Node.js, Express.js, MongoDB, and Socket.io to manage synchronized controls (play, pause, seek) and live web socket events with low latency.',
+    href: 'https://jamify-nly7.onrender.com',
+    texture: '/textures/project/project2.mp4',
+    logo: '/assets/project-logo2.png',
+    logoStyle: {
+      backgroundColor: '#13202F',
+      border: '0.2px solid #17293E',
+      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Express.js',
+        path: '/images/express.webp',
+      },
+      {
+        id: 3,
+        name: 'MongoDB',
+        path: '/images/mongo.webp',
+      },
+      {
+        id: 4,
+        name: 'Socket.io',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
     title: 'PrepWise - AI Mock Interview Platform',
     desc: 'PrepWise is an AI-powered mock interview platform that allows candidates to practice role-specific technical interviews. It captures transcripts, conducts real-time speech-to-text, and delivers structured performance feedback.',
     subdesc:
@@ -52,43 +89,6 @@ export const myProjects = [
         id: 4,
         name: 'TailwindCSS',
         path: '/assets/tailwindcss.png',
-      },
-    ],
-  },
-  {
-    title: 'Jamify - Real-Time Music & Chat Platform',
-    desc: 'Jamify is a real-time collaborative music platform featuring shared listening rooms with synchronized audio playback. It handles secure user accounts, chat rooms, typing indicators, and room activity state.',
-    subdesc:
-      'Developed with React, Redux Toolkit, Node.js, Express.js, MongoDB, and Socket.io to manage synchronized controls (play, pause, seek) and live web socket events with low latency.',
-    href: 'https://github.com/Sarthak',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
-    logoStyle: {
-      backgroundColor: '#13202F',
-      border: '0.2px solid #17293E',
-      boxShadow: '0px 0px 60px 0px #2F6DB54D',
-    },
-    spotlight: '/assets/spotlight2.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'Express.js',
-        path: '/images/express.webp',
-      },
-      {
-        id: 3,
-        name: 'MongoDB',
-        path: '/images/mongo.webp',
-      },
-      {
-        id: 4,
-        name: 'Socket.io',
-        path: '/assets/framer.png',
       },
     ],
   },

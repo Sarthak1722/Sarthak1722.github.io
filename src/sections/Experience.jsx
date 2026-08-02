@@ -87,7 +87,7 @@ const Experience = () => {
       variants={staggerContainer()}
       initial='hidden'
       whileInView='show'
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.10 }}
       id="experience"
       className="md:px-10 px-5 sm:py-16 py-10 max-w-7xl mx-auto relative z-0 w-full"
     >
