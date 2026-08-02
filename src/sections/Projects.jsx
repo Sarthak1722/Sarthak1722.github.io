@@ -62,7 +62,7 @@ const Projects = () => {
   const currentProject = myProjects[selectedProjectIndex];
 
   return (
-    <section id="work" ref={sectionRef} className="my-20 w-full">
+    <section id="work" ref={sectionRef} className="mt-12 mb-6 w-full">
       <div className="max-w-7xl mx-auto w-full md:px-10 px-5">
         <p className="head-text">My Selected Work</p>
 

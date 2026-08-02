@@ -30,7 +30,7 @@ const skills = [
 
 const TechStack = () => {
   return (
-    <div id="skills" className="flex justify-center items-center py-20 w-full relative">
+    <div id="skills" className="flex justify-center items-center py-10 w-full relative">
       <div className="max-w-7xl mx-auto w-full h-full md:px-10 px-5 relative">
         {/* Title Header */}
         <div className="text-left md:mb-10 mb-8">

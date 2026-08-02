@@ -470,8 +470,8 @@ h6,
 /* BITMOJI FOOTER STYLING */
 .main-footer {
   width: 100%;
-  height: 600px;
-  border-top: 1px solid var(--tech-stack-box-border-color);
+  height: 430px;
+  border-top: none;
   overflow: hidden;
   position: relative;
   background-color: var(--color-dark-mode);
@@ -637,10 +637,13 @@ h6,
 }
 
 /* ─────────────────────────────────────
-   CON.cf-section {
+   CONTACT FORM SECTION  (cf- prefix)
+───────────────────────────────────── */
+
+.cf-section {
   position: relative;
   width: 100%;
-  padding: 8rem 2rem 7rem;
+  padding: 5rem 2rem 3.5rem;
   overflow: hidden;
   background-color: #000;
 }
@@ -1090,7 +1093,7 @@ h6,
 
   /* Contact section mobile stack */
   .cf-section {
-    padding: 5rem 1.25rem 4rem;
+    padding: 3.5rem 1.25rem 2.5rem;
   }
 
   .cf-header {
@@ -1109,6 +1112,11 @@ h6,
 
   .cf-form-container {
     padding: 2.2rem 1.6rem;
+  }
+
+  /* Shorter footer container on mobile viewports */
+  .main-footer {
+    height: 420px;
   }
 }
 
@@ -1138,7 +1146,7 @@ h6,
   }
 
   .cf-section {
-    padding: 4rem 1rem 3rem;
+    padding: 2.5rem 1rem 2rem;
   }
 
   .cf-title {
@@ -1173,5 +1181,9 @@ h6,
   .cf-submit-pill {
     font-size: 0.85rem;
     min-height: 48px;
+  }
+
+  .main-footer {
+    height: 350px;
   }
 }
