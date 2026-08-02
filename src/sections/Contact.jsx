@@ -12,9 +12,43 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [state, setState] = useState({ loading: false, success: false, error: false });
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+    if (!firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+    if (!lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    }
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        newErrors.email = "Please enter a valid email address";
+      }
+    }
+    if (!message.trim()) {
+      newErrors.message = "Message is required";
+    }
+    return newErrors;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Clear submission feedback
+    setState({ loading: false, success: false, error: false });
+
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setErrors({});
     setState({ loading: true, success: false, error: false });
 
     try {
@@ -250,51 +284,99 @@ const Contact = () => {
               <div className="cf-input-wrapper">
                 <input
                   type="text"
-                  className="cf-field-input"
+                  className={`cf-field-input ${errors.firstName ? "cf-field-input--error" : ""}`}
                   placeholder="First Name"
                   value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                    if (errors.firstName) {
+                      setErrors((prev) => ({ ...prev, firstName: "" }));
+                    }
+                  }}
                   required
                   disabled={state.loading}
+                  aria-invalid={errors.firstName ? "true" : "false"}
+                  aria-describedby={errors.firstName ? "firstName-error" : undefined}
                 />
+                {errors.firstName && (
+                  <span className="cf-field-error-msg" id="firstName-error" role="alert">
+                    ⚠️ {errors.firstName}
+                  </span>
+                )}
               </div>
 
               <div className="cf-input-wrapper">
                 <input
                   type="text"
-                  className="cf-field-input"
+                  className={`cf-field-input ${errors.lastName ? "cf-field-input--error" : ""}`}
                   placeholder="Last Name"
                   value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  onChange={(e) => {
+                    setLastName(e.target.value);
+                    if (errors.lastName) {
+                      setErrors((prev) => ({ ...prev, lastName: "" }));
+                    }
+                  }}
                   required
                   disabled={state.loading}
+                  aria-invalid={errors.lastName ? "true" : "false"}
+                  aria-describedby={errors.lastName ? "lastName-error" : undefined}
                 />
+                {errors.lastName && (
+                  <span className="cf-field-error-msg" id="lastName-error" role="alert">
+                    ⚠️ {errors.lastName}
+                  </span>
+                )}
               </div>
 
               <div className="cf-input-wrapper">
                 <input
                   type="email"
                   name="from_email"
-                  className="cf-field-input"
+                  className={`cf-field-input ${errors.email ? "cf-field-input--error" : ""}`}
                   placeholder="What's your email?"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (errors.email) {
+                      setErrors((prev) => ({ ...prev, email: "" }));
+                    }
+                  }}
                   required
                   disabled={state.loading}
+                  aria-invalid={errors.email ? "true" : "false"}
+                  aria-describedby={errors.email ? "email-error" : undefined}
                 />
+                {errors.email && (
+                  <span className="cf-field-error-msg" id="email-error" role="alert">
+                    ⚠️ {errors.email}
+                  </span>
+                )}
               </div>
 
               <div className="cf-input-wrapper">
                 <textarea
                   name="message"
                   rows={4}
-                  className="cf-field-textarea"
+                  className={`cf-field-textarea ${errors.message ? "cf-field-textarea--error" : ""}`}
                   placeholder="Your questions..."
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                    if (errors.message) {
+                      setErrors((prev) => ({ ...prev, message: "" }));
+                    }
+                  }}
                   required
                   disabled={state.loading}
+                  aria-invalid={errors.message ? "true" : "false"}
+                  aria-describedby={errors.message ? "message-error" : undefined}
                 />
+                {errors.message && (
+                  <span className="cf-field-error-msg" id="message-error" role="alert">
+                    ⚠️ {errors.message}
+                  </span>
+                )}
               </div>
 
               {/* Success/Error Feedback */}

@@ -60,55 +60,57 @@ const Footer = () => {
 
       {/* Footer contents */}
       <div className="footer-foreground w-full">
-        <div className="max-w-7xl mx-auto w-full h-full relative md:px-10 px-5 flex flex-col justify-between">
-          {/* Back to Top Button */}
+        <div className="footer-content-wrapper max-w-7xl mx-auto w-full h-full relative md:px-10 px-5 flex flex-col justify-between">
+          
+          {/* Left Column: Links and Copyright */}
+          <div className="footer-left-col flex flex-col z-20">
+            <div className="footer-social-links flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+              <a href="mailto:sarthakfulzele2209@gmail.com" className="hover:text-yellow-400 transition-colors">
+                Email
+              </a>
+              <span className="bullet-separator">•</span>
+              <a href="https://github.com/Sarthak1722" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
+                GitHub
+              </a>
+              <span className="bullet-separator">•</span>
+              <a href="https://www.linkedin.com/in/sarthak-fulzele-119181229/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
+                LinkedIn
+              </a>
+              <span className="bullet-separator">•</span>
+              <a href="tel:+917721930950" className="hover:text-yellow-400 transition-colors">
+                +91-7721930950
+              </a>
+            </div>
+            <p className="footer-copyright-text text-sm text-gray-500 font-medium">
+              © {new Date().getFullYear()} Sarthak Fulzele. All rights reserved.
+            </p>
+          </div>
+
+          {/* Middle Column: Avatar */}
+          <div className="footer-avatar-container">
+            {/* Bitmoji overlay head (higher z-index, transparent eyes) */}
+            <img
+              src="/images/Sarthak_Bitmoji.png"
+              alt="animation-head"
+              className="footer-avatar-img"
+              id="footer-wala-avatar"
+            />
+            {/* Moving pupils behind (lower z-index) */}
+            <div className="footer-avatar-face">
+              <div className="footer-avatar-eye footer-left-eye">
+                <div ref={leftPupilRef} className="footer-pupil"></div>
+              </div>
+              <div className="footer-avatar-eye footer-right-eye">
+                <div ref={rightPupilRef} className="footer-pupil"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Back to Top Button */}
           <button className="backtotopbutton" onClick={scrollToTop}>
             <article aria-label="Back to top">&#8592; BACK TO TOP</article>
           </button>
 
-          <div className="footercontainer w-full h-full relative">
-            <div className="footer-avatar-container">
-              {/* Bitmoji overlay head (higher z-index, transparent eyes) */}
-              <img
-                src="/images/Sarthak_Bitmoji.png"
-                alt="animation-head"
-                className="footer-avatar-img"
-                id="footer-wala-avatar"
-              />
-              {/* Moving pupils behind (lower z-index) */}
-              <div className="footer-avatar-face">
-                <div className="footer-avatar-eye footer-left-eye">
-                  <div ref={leftPupilRef} className="footer-pupil"></div>
-                </div>
-                <div className="footer-avatar-eye footer-right-eye">
-                  <div ref={rightPupilRef} className="footer-pupil"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="footer-bottom flex flex-col gap-2">
-              <div className="flex flex-wrap gap-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
-                <a href="mailto:sarthakfulzele2209@gmail.com" className="hover:text-yellow-400 transition-colors">
-                  Email
-                </a>
-                <span>•</span>
-                <a href="https://github.com/Sarthak" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
-                  GitHub
-                </a>
-                <span>•</span>
-                <a href="https://www.linkedin.com/in/Sarthak-Fulzele" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
-                  LinkedIn
-                </a>
-                <span>•</span>
-                <a href="tel:+917721930950" className="hover:text-yellow-400 transition-colors">
-                  +91-7721930950
-                </a>
-              </div>
-              <p className="text-sm text-gray-500 font-medium">
-                © {new Date().getFullYear()} Sarthak Fulzele. All rights reserved.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </footer>
