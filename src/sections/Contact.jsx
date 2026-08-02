@@ -39,7 +39,7 @@ const Contact = () => {
         <div className="cf-header">
           <h2 className="cf-title">HAVE SOME QUESTIONS?</h2>
           <div className="cf-location">
-            <span className="cf-location-icon">🌐</span>
+            <span className="cf-location-icon">📨</span>
             <span className="cf-location-text">
               KHARAGPUR <span className="cf-location-sep">•</span> INDIA <span className="cf-location-sep">:</span> Indian Institute of Technology Kharagpur, WB-721302
             </span>
