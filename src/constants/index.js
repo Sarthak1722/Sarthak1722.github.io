@@ -4,7 +4,7 @@ export const navLinks = [
     link: "#hero",
   },
   {
-    name: "Work",
+    name: "Projects",
     link: "#work",
   },
   {
@@ -12,12 +12,12 @@ export const navLinks = [
     link: "#experience",
   },
   {
-    name: "Beyond Code",
-    link: "#beyond-code",
-  },
-  {
     name: "Skills",
     link: "#skills",
+  },
+  {
+    name: "Beyond Code",
+    link: "#beyond-code",
   },
 ];
 
@@ -64,7 +64,7 @@ export const myProjects = [
     desc: 'PrepWise is an AI-powered mock interview platform that allows candidates to practice role-specific technical interviews. It captures transcripts, conducts real-time speech-to-text, and delivers structured performance feedback.',
     subdesc:
       'Built as a complete interview practice portal with Next.js, React, TypeScript, Google Gemini AI, Vapi Voice APIs, and Firestore to enable lifelike speech interactions and immediate evaluation reports.',
-    href: 'https://github.com/Sarthak',
+    href: 'https://github.com/Sarthak1722',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -101,7 +101,7 @@ export const myProjects = [
     desc: 'Blogging Service is a high-throughput microservices blog engine designed for asynchronous content publishing, real-time search indexing, and low-latency discovery across thousands of posts.',
     subdesc:
       'Engineered in Go, Kafka, and Elasticsearch, containerized with Docker, and deployed on Kubernetes. Uses an async queue to decouple blog writes from search indexing, keeping the API responsive under load.',
-    href: 'https://github.com/Sarthak',
+    href: 'https://github.com/Sarthak1722',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
     logoStyle: {
@@ -140,7 +140,7 @@ export const myProjects = [
     desc: 'An AI-powered movie discovery and recommendation platform featuring semantic search query recommendations and administrative moderation dashboards.',
     subdesc:
       'Built with the MERN stack (MongoDB, Express, React, Node.js) and integrated Hugging Face All MiniLM L6 NLP models to enable high-efficiency vector semantic search suggestions.',
-    href: 'https://github.com/Sarthak',
+    href: 'https://github.com/Sarthak1722',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
