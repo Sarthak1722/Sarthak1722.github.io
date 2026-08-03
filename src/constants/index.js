@@ -327,6 +327,11 @@ export const memoryChapters = [
         hasAbstractModal: true,
         abstract:
           "Investigated ammonia combustion stability using Ansys Chemkin simulations & ANN modeling for emission analysis. Generated a large dataset of 30,000+ Ansys Chemkin simulations on NH3-H2O2 mixtures for flame stability & emission analysis. Applied regression analysis and heatmap visualizations to map effects of preheat temperature, equivalence ratio, and NOx outputs. Trained an ANN using ReLU and Adam to deliver accurate predictions with strong generalization across unseen test datasets.",
+        documents: [
+          { label: "Research Report", icon: "📄", href: "/docs/BTP1 Report Sarthak_F.pdf" },
+          { label: "Certificate",     icon: "🏆", href: "/docs/certificate.jpeg" },
+          { label: "Letter of Recommendation", icon: "📜", href: "/docs/Sarthak LOR.pdf" },
+        ],
       },
     ],
   },
@@ -440,34 +445,77 @@ export const memoryChapters = [
 export const pianoTracks = [
   {
     id: 1,
-    title: "Nocturne in C Minor (Piano Impromptu)",
-    composer: "Sarthak",
-    duration: "1:45",
-    genre: "Neoclassical / Ambient",
-    bpm: 72,
-    notes: ["C4", "Eb4", "G4", "Bb4", "C5", "G4", "Eb4", "C4"],
-    audioSrc: "",
+    title: "River Flows in You",
+    composer: "Yiruma (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Neoclassical",
+    videoSrc: "/images/memories/river_flows_in_you.mp4",
   },
   {
     id: 2,
-    title: "River Flows in You (Acoustic Piano Cover)",
-    composer: "Yiruma (Played by Sarthak)",
-    duration: "2:10",
-    genre: "Modern Piano",
-    bpm: 84,
-    notes: ["A4", "C5", "E5", "A5", "G5", "E5", "C5", "A4"],
-    audioSrc: "",
+    title: "Raabta",
+    composer: "Pritam (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Romance Solo",
+    videoSrc: "/images/memories/raabta.mp4",
   },
   {
     id: 3,
-    title: "Moonlight Reverie (Original Improvisation)",
-    composer: "Sarthak",
-    duration: "1:30",
-    genre: "Cinematic Solo Piano",
-    bpm: 65,
-    notes: ["F4", "A4", "C5", "F5", "E5", "C5", "A4", "F4"],
-    audioSrc: "",
+    title: "Blue (Piano Cover)",
+    composer: "Yung Kai (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Modern Solo",
+    videoSrc: "/images/memories/blue.mp4",
   },
+  {
+    id: 4,
+    title: "Student of the Year Wedding Theme",
+    composer: "Vishal-Shekhar (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Festive Piano",
+    videoSrc: "/images/memories/soty_wedding.mp4",
+  },
+  {
+    id: 5,
+    title: "Saudebaazi",
+    composer: "Pritam (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Melodic Acoustic",
+    videoSrc: "/images/memories/saudebaazi.mp4",
+  },
+  {
+    id: 6,
+    title: "Kho Gaye Hum Kahan",
+    composer: "Jasleen Royal (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Acoustic Melody",
+    videoSrc: "/images/memories/kho_gaye_hum_kahan.mp4",
+  },
+  {
+    id: 7,
+    title: "Phir Kabhi (MS Dhoni BGM)",
+    composer: "Amaal Mallik (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Bollywood Piano",
+    videoSrc: "/images/memories/phir_kabhi.mp4",
+  },
+  {
+    id: 8,
+    title: "Interstellar Main Theme",
+    composer: "Hans Zimmer (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Cinematic Solo",
+    videoSrc: "/images/memories/intersteller.mp4",
+  },
+  {
+    id: 9,
+    title: "Shinchan Nostalgic BGM",
+    composer: "Shuntaro Sengoku (Covered by Sarthak)",
+    duration: "Piano Video",
+    genre: "Anime BGM",
+    videoSrc: "/images/memories/shinchan_bgm.mp4",
+  },
+
 ];
 
 export const beyondCodeStats = [
@@ -476,5 +524,6 @@ export const beyondCodeStats = [
   { label: "Harmonium Proficiency", value: "Level 6 (NCA)" },
   { label: "Inter-Hall Drama", value: "Gold Medal 🥇" },
 ];
+
 
 
