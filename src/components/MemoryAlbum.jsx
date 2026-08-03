@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import PianoPlayer from "./PianoPlayer";
 
 /* ── Short label map ── */
@@ -18,12 +18,12 @@ const MemoryCardContent = ({ memory, onOpenAbstract }) => {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="bg-[#11111a]/95 rounded-[22px] p-5 sm:p-6 backdrop-blur-xl border border-white/15 flex flex-col lg:flex-row gap-6 items-center relative overflow-hidden shadow-2xl h-full">
+    <div className="bg-[#11111a]/95 rounded-[22px] p-5 sm:p-6 backdrop-blur-xl border border-white/15 flex flex-col lg:flex-row gap-6 items-center relative overflow-hidden shadow-2xl h-auto">
       {/* Ambient Glow */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Left Side: Polaroid Photo Snapshot Frame */}
-      <div className="w-full lg:w-80 flex-shrink-0 flex flex-col items-center justify-center">
+      <div className="w-full max-w-[240px] sm:max-w-[285px] lg:max-w-none lg:w-80 flex-shrink-0 flex flex-col items-center justify-center mx-auto">
         <div className="w-full bg-neutral-900 border-8 border-neutral-100/90 rounded-sm p-3 shadow-2xl relative transition-transform duration-500 hover:scale-[1.02] -rotate-1">
           {/* Sticky Tape Visual Accent */}
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-amber-100/40 backdrop-blur-sm border border-amber-200/30 rotate-[-1deg] shadow-sm z-20" />
@@ -153,7 +153,6 @@ const MemoryAlbum = ({ chapters, onOpenAbstract }) => {
   const [activeTab, setActiveTab] = useState(chapters[0].id);
   const [activeMemoryIndex, setActiveMemoryIndex] = useState(0);
   const [dragDirection, setDragDirection] = useState(0); // -1 left, 1 right
-
   const currentChapter = chapters.find((c) => c.id === activeTab) || chapters[0];
   const memories = currentChapter.memories;
   const totalMemories = memories.length;
@@ -228,8 +227,8 @@ const MemoryAlbum = ({ chapters, onOpenAbstract }) => {
         </AnimatePresence>
       ) : (
         <>
-          {/* ── Card area: fixed height so nav never jumps ── */}
-          <div className="relative w-full h-[820px] xs:h-[780px] sm:h-[740px] md:h-[700px] lg:h-[475px]">
+          {/* ── Card area: dynamic height ── */}
+          <div className="relative w-full h-auto">
             <AnimatePresence mode="wait" custom={dragDirection}>
               <motion.div
                 key={`${activeTab}-${activeMemoryIndex}`}
@@ -245,7 +244,14 @@ const MemoryAlbum = ({ chapters, onOpenAbstract }) => {
                   if (info.offset.x < -SWIPE_THRESHOLD) handleNext();
                   else if (info.offset.x > SWIPE_THRESHOLD) handlePrev();
                 }}
-                className="absolute inset-0 cursor-grab active:cursor-grabbing p-[1.5px] rounded-3xl shadow-2xl"
+                onTap={(e) => {
+                  const target = e.target;
+                  if (target.closest("button") || target.closest("a")) {
+                    return;
+                  }
+                  handleNext();
+                }}
+                className="relative w-full cursor-grab active:cursor-grabbing p-[1.5px] rounded-3xl shadow-2xl"
                 style={{
                   background: "linear-gradient(135deg, rgba(139,92,246,0.35), rgba(255,255,255,0.06), rgba(99,102,241,0.25))",
                   touchAction: "pan-y",
