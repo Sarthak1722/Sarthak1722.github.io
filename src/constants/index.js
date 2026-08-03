@@ -362,7 +362,7 @@ export const memoryChapters = [
   },
   {
     id: "cultural",
-    title: "Stage, Cultural & Leadership",
+    title: "Stage",
     icon: "🎭",
     badge: "Gold Medal Winner",
     memories: [
