@@ -33,7 +33,7 @@ const BeyondCode = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
-      className="md:px-10 px-5 sm:py-20 py-12 max-w-7xl mx-auto relative z-0 w-full"
+      className="md:px-10 px-5 sm:pt-20 sm:pb-4 pt-12 pb-2 max-w-7xl mx-auto relative z-0 w-full"
     >
       {/* Section Header */}
       <motion.div variants={textVariant(0)} className="text-center mb-12">

@@ -660,7 +660,7 @@ h6,
 .cf-section {
   position: relative;
   width: 100%;
-  padding: 5rem 2rem 3.5rem;
+  padding: 2rem 2rem 3.5rem;
   overflow: hidden;
   background-color: #000;
 }
@@ -673,7 +673,7 @@ h6,
   transform: translateX(-50%);
   width: min(1000px, 100vw);
   height: 600px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse 50% 35% at 50% 35%, rgba(124, 58, 237, 0.15) 0%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -1246,7 +1246,7 @@ h6,
 
   /* Contact section mobile stack */
   .cf-section {
-    padding: 3.5rem 1.25rem 2.5rem;
+    padding: 1.5rem 1.25rem 2.5rem;
   }
 
   .cf-header {
@@ -1294,7 +1294,7 @@ h6,
   }
 
   .cf-section {
-    padding: 2.5rem 1rem 2rem;
+    padding: 1rem 1rem 2rem;
   }
 
   .cf-title {
