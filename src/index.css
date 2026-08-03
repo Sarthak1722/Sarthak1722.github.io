@@ -788,7 +788,8 @@ h6,
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 100px; /* Pill shape */
+  border-radius: 100px;
+  /* Pill shape */
   padding: 0.95rem 1.6rem;
   font-size: 0.95rem;
   color: #ffffff;
@@ -813,7 +814,8 @@ h6,
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px; /* Rounded corner rectangular shape */
+  border-radius: 20px;
+  /* Rounded corner rectangular shape */
   padding: 1.1rem 1.6rem;
   font-size: 0.95rem;
   color: #ffffff;
@@ -885,6 +887,7 @@ h6,
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -939,7 +942,9 @@ h6,
 }
 
 @keyframes cf-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* RESPONSIVE MEDIA QUERIES */
@@ -1036,6 +1041,7 @@ h6,
 
 /* ── Tablet & Mobile Footer: ≤1024px ── */
 @media (max-width: 1024px) {
+
   /* Footer */
   .main-footer {
     height: auto;
@@ -1180,7 +1186,8 @@ h6,
     right: auto !important;
     left: auto !important;
     width: 100%;
-    height: 360px;      /* visible window — increased */
+    height: 360px;
+    /* visible window — increased */
     overflow: hidden;
     flex-shrink: 0;
     z-index: 10;
@@ -1193,7 +1200,8 @@ h6,
   */
   .robot-3d-inner {
     position: absolute;
-    top: -235px;   /* 36% of 650px canvas */
+    top: -235px;
+    /* 36% of 650px canvas */
     left: 0;
     width: 100%;
     height: 650px;
@@ -1201,7 +1209,8 @@ h6,
 
   .hero-content {
     margin-left: 0;
-    margin-top: 1.5rem;   /* small gap between robot and text */
+    margin-top: -5.5rem;
+    /* small gap between robot and text */
     max-width: 100%;
     width: 100%;
     display: flex;
