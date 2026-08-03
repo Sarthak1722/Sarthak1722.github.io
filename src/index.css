@@ -1336,18 +1336,29 @@ h6,
   }
 }
 
-/* ── Tablet Viewports: 769px to 1024px ── */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .cf-grid {
-    grid-template-columns: 0.95fr 1.05fr !important;
-    gap: 2rem !important;
+/* ── Beyond Code Bento Section Animations & Utilities ── */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-  .cf-postcard-svg {
-    max-width: 360px !important;
-  }
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
 
-  .cf-form-container {
-    padding: 2.5rem 2rem !important;
+@keyframes soundWaveBounce {
+  0%, 100% {
+    height: 15%;
   }
+  50% {
+    height: 100%;
+  }
+}
+
+.bento-sound-bar {
+  animation: soundWaveBounce 0.8s ease-in-out infinite alternate;
 }

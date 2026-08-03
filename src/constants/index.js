@@ -12,6 +12,10 @@ export const navLinks = [
     link: "#experience",
   },
   {
+    name: "Beyond Code",
+    link: "#beyond-code",
+  },
+  {
     name: "Skills",
     link: "#skills",
   },
@@ -256,3 +260,221 @@ export const techStackIcons = [
     rotation: [0, -Math.PI / 4, 0],
   },
 ];
+
+export const memoryChapters = [
+  {
+    id: "academia",
+    title: "Academia & Foundations",
+    icon: "🏛️",
+    badge: "IIT Kharagpur",
+    memories: [
+      {
+        id: "iit-kgp",
+        title: "Bachelors & Masters of Technology, IIT Kharagpur",
+        period: "2021 – 2026",
+        location: "IIT Kharagpur, India",
+        badge: "Tier-1 Premier Institution",
+        image: "/images/memories/iitkgp.jpg",
+        imageCaption: "IIT KGP Memories",
+        narrative:
+          "My time at IIT Kharagpur has been a transformative 5-year journey combining rigorous engineering with cutting-edge AI research. From mastering Mechanical Engineering fundamentals to building neural network pipelines for flexible manufacturing and medical VQA models, IIT Kharagpur shaped my problem-solving mindset and technical discipline.",
+        highlights: [
+          "Dual Degree (B.Tech + M.Tech) in Mechanical Engineering with AI/ML Focus.",
+          "Bachelor's & Master's Thesis research under Prof. V Mahendra Reddy & Prof. Sankha Deb.",
+          "Active involvement in hall activities, technical clubs, and campus leadership.",
+        ],
+      },
+      {
+        // High School & Schooling
+        id: "high-school",
+        title: "Vidya Vihar Convent & BJM Carmel Academy",
+        period: "2009 – 2021",
+        location: "Chandrapur, Maharashtra",
+        badge: "District Rank 5 & Top 1% National",
+        image: "/images/memories/school.jpeg",
+        imageCaption: "School Days & Academic Honors",
+        narrative:
+          "My academic roots were formed in Chandrapur. Securing District Rank 5 and Maharashtra Rank 123 in the ICAD Junior Science Exam laid the foundation for my passion for mathematics and physical sciences. Scoring in the top 1% nationally in entrance exams paved the way to IIT Kharagpur.",
+        highlights: [
+          "XII Science at Vidya Vihar Convent High School (2019 - 2021).",
+          "X Board Education at BJM Carmel Academy (2009 - 2019).",
+          "Secured District Rank 5 in ICAD General Science Exam.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "conference",
+    title: "Research & Conference Spotlight",
+    icon: "🎤",
+    badge: "N0ET-2024 Award",
+    memories: [
+      {
+        id: "noet-2024",
+        title: "Youngest Presenter at N0ET-2024 Conference",
+        period: "Dec 2024",
+        location: "IIT (ISM) Dhanbad, India",
+        badge: "Youngest Presenter Title 🏆",
+        image: "/images/memories/conference.jpg",
+        imageCaption: "Presenting Chemical Kinetic Research at IIT (ISM) Dhanbad",
+        narrative:
+          "Honored with the 'Youngest Presenter' title at the Net-Zero Emissions Technology (N0ET-2024) International Conference at IIT (ISM) Dhanbad. I presented my research under Prof. V Mahendra Reddy on chemical kinetic modeling of Ammonia ($NH_3$) and Hydrogen Peroxide ($H_2O_2$) micro-mixes, analyzing 30,000+ Ansys Chemkin simulations with Artificial Neural Networks (ANN).",
+        highlights: [
+          "Simulated 30,000+ flame stability & emission conditions for zero-emission fuels.",
+          "Trained ReLU/Adam ANN models for accurate NOx emission predictions.",
+          "Awarded Youngest Presenter at N0ET-2024 Conference, IIT Dhanbad.",
+        ],
+        hasAbstractModal: true,
+        abstract:
+          "Investigated ammonia combustion stability using Ansys Chemkin simulations & ANN modeling for emission analysis. Generated a large dataset of 30,000+ Ansys Chemkin simulations on NH3-H2O2 mixtures for flame stability & emission analysis. Applied regression analysis and heatmap visualizations to map effects of preheat temperature, equivalence ratio, and NOx outputs. Trained an ANN using ReLU and Adam to deliver accurate predictions with strong generalization across unseen test datasets.",
+      },
+    ],
+  },
+  {
+    id: "music",
+    title: "Harmonies & Piano",
+    icon: "🎹",
+    badge: "NCA Level 6 Distinction",
+    memories: [
+      {
+        id: "harmonium-cert",
+        title: "Level 6 Harmonium & Piano Certification",
+        period: "NCA, IIT Kharagpur",
+        location: "IIT Kharagpur",
+        badge: "Excellent Grade Distinction 🏅",
+        image: "/images/memories/harmonium.webp",
+        imageCaption: "Practicing Melodies & Acoustic Performances",
+        narrative:
+          "Music has always been my creative sanctuary. I earned a Level 6 Certification in Harmonium & Keyboards with an 'Excellent Grade' from the National Centre of Excellence in Arts (NCA), IIT Kharagpur. I love composing neoclassical piano improvisations and playing acoustic covers of classical & modern pieces.",
+        highlights: [
+          "Level 6 Certification in Harmonium proficiency at NCA, IIT Kharagpur.",
+          "Achieved 'Excellent Grade' in musical theory and performance.",
+          "Passionate about neoclassical piano improvisations and sound synthesis.",
+        ],
+        hasAudioPlayer: true,
+      },
+    ],
+  },
+  {
+    id: "cultural",
+    title: "Stage, Cultural & Leadership",
+    icon: "🎭",
+    badge: "Gold Medal Winner",
+    memories: [
+      {
+        id: "nukkad-gold",
+        title: "Nukkad Naatak Gold & Illumination Silver",
+        period: "2022 – 2023",
+        location: "MMM Hall of Residence, IIT Kharagpur",
+        badge: "Gold Among 23 Halls 🥇",
+        image: "/images/memories/nukkad.jpg",
+        imageCaption: "Inter-Hall Championship Dramatic Performance",
+        narrative:
+          "Represented Pandit Madan Mohan Malaviya Hall of Residence in the Inter-Hall General Championship. Achieved Gold Medal in Nukkad Naatak (Street Play) among 23 halls for powerful theatrical performances, and Silver Medal in Illumination 2022. Served as Social & Cultural Secretary organizing hall-wide talent hunts and festival showcases.",
+        highlights: [
+          "Gold Medalist in Inter-Hall General Championship Nukkad Naatak.",
+          "Silver Medalist in Illumination 2022 among 23 halls.",
+          "Elected Social & Cultural Secretary managing hall cultural events.",
+        ],
+      },
+      {
+        id: "spring-fest",
+        title: "Core Organising Team Member - Spring Fest",
+        period: "Aug 2022 – Jun 2023",
+        location: "IIT Kharagpur",
+        badge: "Led 46 Team Members",
+        image: "/images/memories/springfest.webp",
+        imageCaption: "Spring Fest International Carnival & Prelims",
+        narrative:
+          "Core organizing leader for Spring Fest, IIT Kharagpur's annual international cultural festival. Co-led a team of 46 members, extended outreach across 850+ colleges nationwide, conducted regional preliminary rounds with 900+ participants, and introduced International Carnivals featuring performers from 15+ countries.",
+        highlights: [
+          "Led sponsorship campaigns across Mumbai and Pune surpassing previous records.",
+          "Expanded outreach to 850+ colleges with 250+ published articles.",
+          "Organized prelims recording 150% registration growth.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "chronicles",
+    title: "Developer Chronicles & Project Blogs",
+    icon: "📝",
+    badge: "Build Stories",
+    memories: [
+      {
+        id: "jamify-blog",
+        title: "Jamify: Architecting Real-Time Audio Sync & Socket.io",
+        period: "May 2025 – Jul 2025",
+        location: "Full-Stack Project",
+        badge: "React, Socket.io, Node.js",
+        image: "/images/memories/jamify.webp",
+        imageCaption: "Collaborative Music Platform & Room Sync",
+        narrative:
+          "Jamify is a real-time collaborative music platform featuring shared listening rooms with synchronized audio playback. I engineered NTP-inspired ping-pong clock alignment and state drift correction algorithms so room members stay synced within sub-100ms playhead tolerance.",
+        highlights: [
+          "Synchronized play/pause/seek controls with Socket.io web sockets.",
+          "Built JWT authentication, typing indicators, and room queues.",
+          "State drift correction keeping clients in lock-step playback.",
+        ],
+      },
+      {
+        id: "prepwise-blog",
+        title: "PrepWise: AI Mock Interviewer with Gemini & Vapi",
+        period: "Jan 2026 – Mar 2026",
+        location: "AI Platform",
+        badge: "Next.js, Google Gemini, Vapi",
+        image: "/images/memories/prepwise.webp",
+        imageCaption: "Conversational AI Technical Interview Dashboard",
+        narrative:
+          "PrepWise delivers realistic technical mock interviews with instant speech-to-text feedback. Built with Next.js, Google Gemini AI, Vapi Voice APIs, and Firestore to enable lifelike turn-taking, automated score breakdown, and custom candidate evaluation reports.",
+        highlights: [
+          "Integrated Vapi Voice & Gemini AI for turn-taking under 400ms.",
+          "Designed dynamic performance feedback dashboards & score cards.",
+          "Firestore data models for candidate history & drill-down analytics.",
+        ],
+      },
+    ],
+  },
+];
+
+export const pianoTracks = [
+  {
+    id: 1,
+    title: "Nocturne in C Minor (Piano Impromptu)",
+    composer: "Sarthak",
+    duration: "1:45",
+    genre: "Neoclassical / Ambient",
+    bpm: 72,
+    notes: ["C4", "Eb4", "G4", "Bb4", "C5", "G4", "Eb4", "C4"],
+    audioSrc: "",
+  },
+  {
+    id: 2,
+    title: "River Flows in You (Acoustic Piano Cover)",
+    composer: "Yiruma (Played by Sarthak)",
+    duration: "2:10",
+    genre: "Modern Piano",
+    bpm: 84,
+    notes: ["A4", "C5", "E5", "A5", "G5", "E5", "C5", "A4"],
+    audioSrc: "",
+  },
+  {
+    id: 3,
+    title: "Moonlight Reverie (Original Improvisation)",
+    composer: "Sarthak",
+    duration: "1:30",
+    genre: "Cinematic Solo Piano",
+    bpm: 65,
+    notes: ["F4", "A4", "C5", "F5", "E5", "C5", "A4", "F4"],
+    audioSrc: "",
+  },
+];
+
+export const beyondCodeStats = [
+  { label: "IIT Kharagpur Degree", value: "B.Tech + M.Tech" },
+  { label: "N0ET-2024 Conference Title", value: "Youngest Presenter 🏆" },
+  { label: "Harmonium Proficiency", value: "Level 6 (NCA)" },
+  { label: "Inter-Hall Drama", value: "Gold Medal 🥇" },
+];
+
+

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
+import BeyondCode from "./sections/BeyondCode";
 import TechStack from "./sections/TechStack";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
@@ -18,6 +19,7 @@ function App() {
         <Projects />
         <Experience />
         <TechStack />
+        <BeyondCode />
         <Contact />
         <Footer />
       </div>

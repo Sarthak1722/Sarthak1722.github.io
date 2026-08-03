@@ -54,7 +54,7 @@ const Projects = () => {
   return (
     <section id="work" ref={sectionRef} className="mt-12 mb-6 w-full">
       <div className="max-w-7xl mx-auto w-full md:px-10 px-5">
-        <p className="head-text">My Selected Work</p>
+        <p className="head-text">Featured Projects</p>
 
         {/* Unified control console wrapper card */}
         <div 
