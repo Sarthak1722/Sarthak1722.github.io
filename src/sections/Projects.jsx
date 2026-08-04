@@ -67,8 +67,10 @@ const Projects = () => {
               <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
             </div>
 
-            <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-xl" style={currentProject.logoStyle}>
-              <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
+            <div className="flex items-center justify-between w-full z-10">
+              <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-xl" style={currentProject.logoStyle}>
+                <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
+              </div>
             </div>
 
             <div className="flex flex-col gap-5 text-white-600 my-5">
@@ -101,6 +103,12 @@ const Projects = () => {
               <button className="arrow-btn hover:border-violet-500/50 hover:bg-white/5 transition-all duration-300" onClick={() => handleNavigation('previous')}>
                 <img src="/assets/left-arrow.png" alt="left arrow" />
               </button>
+
+              <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-mono font-medium tracking-wider text-zinc-300 shadow-md">
+                <span className="text-violet-400 font-bold">{selectedProjectIndex + 1}</span>
+                <span className="text-zinc-500">/</span>
+                <span className="text-zinc-400">{projectCount}</span>
+              </div>
 
               <button className="arrow-btn hover:border-violet-500/50 hover:bg-white/5 transition-all duration-300" onClick={() => handleNavigation('next')}>
                 <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4" />

@@ -28,7 +28,7 @@ export const myProjects = [
     subdesc:
       'Developed with React, Redux Toolkit, Node.js, Express.js, MongoDB, and Socket.io to manage synchronized controls (play, pause, seek) and live web socket events with low latency.',
     href: 'https://jamify-nly7.onrender.com',
-    texture: '/textures/project/project2.mp4',
+    texture: '/textures/project/jamify.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
       backgroundColor: '#13202F',
@@ -40,22 +40,32 @@ export const myProjects = [
       {
         id: 1,
         name: 'React.js',
-        path: '/assets/react.svg',
+        path: '/assets/React.svg',
       },
       {
         id: 2,
-        name: 'Express.js',
-        path: '/images/express.webp',
+        name: 'Redux',
+        path: '/assets/Redux.svg',
       },
       {
         id: 3,
-        name: 'MongoDB',
-        path: '/images/mongo.webp',
+        name: 'Node.js',
+        path: '/assets/Node.js.svg',
       },
       {
         id: 4,
+        name: 'Express.js',
+        path: '/assets/Express.svg',
+      },
+      {
+        id: 5,
+        name: 'MongoDB',
+        path: '/assets/MongoDB.svg',
+      },
+      {
+        id: 6,
         name: 'Socket.io',
-        path: '/assets/framer.png',
+        path: '/assets/Socket.io.svg',
       },
     ],
   },
@@ -65,7 +75,7 @@ export const myProjects = [
     subdesc:
       'Built as a complete interview practice portal with Next.js, React, TypeScript, Google Gemini AI, Vapi Voice APIs, and Firestore to enable lifelike speech interactions and immediate evaluation reports.',
     href: 'https://github.com/Sarthak1722',
-    texture: '/textures/project/project1.mp4',
+    texture: '/textures/project/prepwise.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
       backgroundColor: '#2A1816',
@@ -82,28 +92,75 @@ export const myProjects = [
       {
         id: 2,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: '/assets/TypeScript.svg',
       },
       {
         id: 3,
-        name: 'Google Gemini',
-        path: '/assets/react.svg',
+        name: 'React.js',
+        path: '/assets/React.svg',
       },
       {
         id: 4,
         name: 'TailwindCSS',
-        path: '/assets/tailwindcss.png',
+        path: '/assets/Tailwind CSS.svg',
       },
     ],
   },
   {
-    title: 'Distributed Ingestion Blogging Service',
-    desc: 'Blogging Service is a high-throughput microservices blog engine designed for asynchronous content publishing, real-time search indexing, and low-latency discovery across thousands of posts.',
+    title: 'Chronicle - Monolithic Go & React Blogging Platform',
+    desc: 'Chronicle is a full-stack, production-grade blogging platform featuring user authentication via JWT & Google OAuth2, dynamic post CRUD operations, nested comment threads, and S3-compatible image uploads.',
     subdesc:
-      'Engineered in Go, Kafka, and Elasticsearch, containerized with Docker, and deployed on Kubernetes. Uses an async queue to decouple blog writes from search indexing, keeping the API responsive under load.',
+      'Engineered with Go Fiber, PostgreSQL, MongoDB, AWS S3 / Filebase S3, and React. Built as a unified monorepo containerized for low-latency hosting on Render with SPA fallback routes.',
     href: 'https://chronicle-aiso.onrender.com/',
-    texture: '/textures/project/project3.mp4',
+    texture: '/textures/project/chronicle.mp4',
     logo: '/assets/project-logo3.png',
+    logoStyle: {
+      backgroundColor: '#1C3122',
+      border: '0.2px solid #25472E',
+      boxShadow: '0px 0px 60px 0px #358B534D',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Go',
+        path: '/assets/Go.svg',
+      },
+      {
+        id: 2,
+        name: 'PostgreSQL',
+        path: '/assets/PostgresSQL.svg',
+      },
+      {
+        id: 3,
+        name: 'MongoDB',
+        path: '/assets/MongoDB.svg',
+      },
+      {
+        id: 4,
+        name: 'React.js',
+        path: '/assets/React.svg',
+      },
+      {
+        id: 5,
+        name: 'AWS S3',
+        path: '/assets/AWS.svg',
+      },
+      {
+        id: 6,
+        name: 'Docker',
+        path: '/assets/Docker.svg',
+      },
+    ],
+  },
+  {
+    title: 'Distributed Ingestion Blogging Microservice',
+    desc: 'A high-throughput microservices blog ingestion engine designed for asynchronous content publishing, real-time search indexing, and low-latency discovery across thousands of posts.',
+    subdesc:
+      'Engineered in Go, Elasticsearch, Docker Compose, and Kubernetes. Employs an async queue to decouple blog writes from search indexing, keeping API endpoints responsive under heavy load.',
+    href: 'https://github.com/Sarthak1722/distributed-blogging-service',
+    texture: '/textures/project/blog.mp4',
+    logo: '/assets/project-logo4.png',
     logoStyle: {
       backgroundColor: '#60f5a1',
       background:
@@ -111,7 +168,44 @@ export const myProjects = [
       border: '0.2px solid rgba(208, 213, 221, 1)',
       boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
     },
-    spotlight: '/assets/spotlight3.png',
+    spotlight: '/assets/spotlight4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Go',
+        path: '/assets/Go.svg',
+      },
+      {
+        id: 2,
+        name: 'Elasticsearch',
+        path: '/assets/Elastic Search.svg',
+      },
+      {
+        id: 3,
+        name: 'Docker',
+        path: '/assets/Docker.svg',
+      },
+      {
+        id: 4,
+        name: 'Kubernetes',
+        path: '/assets/Kubernetes.svg',
+      },
+    ],
+  },
+  {
+    title: 'Async Email Queue Microservice',
+    desc: 'A decoupled, fault-tolerant email worker service that handles asynchronous email queuing, concurrent delivery retry mechanisms, and transaction status tracking.',
+    subdesc:
+      'Built with Go (Chi Router), RabbitMQ message broker, Go-Mail SMTP client, and worker pools for reliable transactional email delivery with custom validation and health monitoring.',
+    href: 'https://github.com/Sarthak1722/email_service',
+    texture: '/textures/project/project5.mp4',
+    logo: '/assets/project-logo5.png',
+    logoStyle: {
+      backgroundColor: '#1E1B4B',
+      border: '0.2px solid #312E81',
+      boxShadow: '0px 0px 60px 0px #6366F14D',
+    },
+    spotlight: '/assets/spotlight5.png',
     tags: [
       {
         id: 1,
@@ -120,18 +214,55 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'Docker',
-        path: '/assets/company/meta.png',
+        name: 'RabbitMQ',
+        path: '/assets/framer.png',
       },
       {
         id: 3,
-        name: 'Git',
-        path: '/images/logos/git.svg',
+        name: 'REST API',
+        path: '/images/express.webp',
       },
       {
         id: 4,
-        name: 'Kubernetes',
-        path: '/assets/framer.png',
+        name: 'Docker',
+        path: '/images/logos/git.svg',
+      },
+    ],
+  },
+  {
+    title: 'Kaizen (改善) - Production-Grade Backend Engine',
+    desc: 'Kaizen is a production-grade backend engineering system built from first principles in Go. It evolves a CRUD domain into a scalable architecture with layered services, Redis caching, and full observability.',
+    subdesc:
+      'Engineered with Go Fiber, PostgreSQL (pgx connection pooling), Redis caching, Docker Compose, Prometheus metrics, Grafana dashboards, and OpenTelemetry tracing for production reliability.',
+    href: 'https://github.com/Sarthak1722',
+    texture: '/textures/project/kaizen.mp4',
+    logo: '/assets/project-logo1.png',
+    logoStyle: {
+      backgroundColor: '#0F172A',
+      border: '0.2px solid #1E293B',
+      boxShadow: '0px 0px 60px 0px #38BDF84D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Go',
+        path: '/assets/Go.svg',
+      },
+      {
+        id: 2,
+        name: 'PostgreSQL',
+        path: '/assets/PostgresSQL.svg',
+      },
+      {
+        id: 3,
+        name: 'Redis',
+        path: '/assets/Redis.svg',
+      },
+      {
+        id: 4,
+        name: 'Docker',
+        path: '/assets/Docker.svg',
       },
     ],
   },
@@ -141,7 +272,7 @@ export const myProjects = [
     subdesc:
       'Built with the MERN stack (MongoDB, Express, React, Node.js) and integrated Hugging Face All MiniLM L6 NLP models to enable high-efficiency vector semantic search suggestions.',
     href: 'https://github.com/Sarthak1722',
-    texture: '/textures/project/project4.mp4',
+    texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
       backgroundColor: '#0E1F38',
@@ -153,22 +284,22 @@ export const myProjects = [
       {
         id: 1,
         name: 'React.js',
-        path: '/assets/react.svg',
+        path: '/assets/React.svg',
       },
       {
         id: 2,
         name: 'Node.js',
-        path: '/images/node.webp',
+        path: '/assets/Node.js.svg',
       },
       {
         id: 3,
         name: 'MongoDB',
-        path: '/images/mongo.webp',
+        path: '/assets/MongoDB.svg',
       },
       {
         id: 4,
         name: 'TailwindCSS',
-        path: '/assets/tailwindcss.png',
+        path: '/assets/Tailwind CSS.svg',
       },
     ],
   },
@@ -178,8 +309,9 @@ export const experiences = [
   {
     title: "AI-Engineer Intern",
     company_name: "Qurve-AI",
-    icon: "/assets/company/meta.png",
-    iconBg: "#383E56",
+    icon: "/assets/company/logo.png",
+    iconBg: "#101828",
+    iconClass: "w-[85%] h-[85%] object-contain rounded-full",
     date: "Jan 2025 – Apr 2025",
     points: [
       "Built a real-time voice chatbot by integrating AssemblyAI, GPT-4o-mini, and ElevenLabs for natural, human-like dialogue.",
@@ -191,8 +323,9 @@ export const experiences = [
   {
     title: "Research Internship",
     company_name: "Deakin University",
-    icon: "/assets/company/starbucks.png",
-    iconBg: "#E6DEDD",
+    icon: "/assets/company/deakin.png",
+    iconBg: "#FFFFFF",
+    iconClass: "w-full h-full object-cover scale-140 rounded-full",
     date: "Aug 2025 - Dec 2025",
     points: [
       "Researched multimodal LLMs for disease diagnosis, clinical decision support, and scalable real-world clinical deployment.",
@@ -204,8 +337,9 @@ export const experiences = [
   {
     title: "Core Organising Team Member",
     company_name: "Spring Fest IIT Kharagpur",
-    icon: "/assets/company/shopify.png",
-    iconBg: "#383E56",
+    icon: "/assets/company/sf.jpeg",
+    iconBg: "#1E1035",
+    iconClass: "w-full h-full object-cover scale-110 rounded-full",
     date: "Aug 2022 - Jun 2023",
     points: [
       "Led sponsorship campaigns across Mumbai and Pune, securing strong funding growth and surpassing the previous fest edition.",
@@ -217,8 +351,9 @@ export const experiences = [
   {
     title: "Social & Cultural Secretary",
     company_name: "MMM Hall of Residence, IIT Kharagpur",
-    icon: "/assets/company/tesla.png",
-    iconBg: "#E6DEDD",
+    icon: "/assets/company/mmm.webp",
+    iconBg: "#FFFFFF",
+    iconClass: "w-[92%] h-[92%] object-contain rounded-full",
     date: "Aug 2022 - Apr 2023",
     points: [
       "Organized and managed large-scale cultural events that boosted community engagement and resident participation.",

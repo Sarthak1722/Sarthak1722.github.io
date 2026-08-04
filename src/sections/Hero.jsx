@@ -113,7 +113,7 @@ const Hero = () => {
                     display: "inline-block",
                   }}
                 >
-                  hi! i am sarthak
+                  hi! i am sarthak.
                 </span>
               </h1>
 
