@@ -1,10 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Spline from "@splinetool/react-spline";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { navLinks } from "../constants";
+import ResumeModal from "../components/ResumeModal";
 
 const Hero = () => {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   useEffect(() => {
     AOS.init({ once: true, duration: 1000 });
   }, []);
@@ -128,10 +131,57 @@ const Hero = () => {
                 yes, the cognitive dissonance is real. if you need someone to orchestrate kubernetes pods or
                 fine-tune multimodal models while pretending they know how a turbine works, i'm your guy.
               </p>
+
+              {/* Interactive Action Buttons */}
+              <div
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="400"
+                data-aos-offset="0"
+                data-aos-duration="2600"
+                className="mt-8 flex flex-wrap gap-4 z-30 relative"
+              >
+                <button
+                  onClick={() => setIsResumeOpen(true)}
+                  className="group flex items-center gap-2.5 px-6 py-3 text-sm font-semibold tracking-wide text-white bg-purple-600/10 hover:bg-purple-600 border border-purple-500/30 hover:border-purple-500 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.1)] hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <svg
+                    className="w-4 h-4 text-purple-300 group-hover:text-white transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                  <span>Resume</span>
+                </button>
+
+                <a
+                  href="#contact"
+                  className="flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wide text-zinc-300 hover:text-white bg-zinc-900/60 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-full transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <span>Let's Connect</span>
+                  <span className="text-zinc-500 group-hover:translate-x-0.5 transition-transform">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </main>
       </div>
+
+      {/* Resume Modal */}
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </section>
   );
 };

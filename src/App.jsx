@@ -7,6 +7,7 @@ import TechStack from "./sections/TechStack";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import LoadingScreen from "./components/LoadingScreen";
+import Soundscape from "./components/Soundscape";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +23,7 @@ function App() {
         <BeyondCode />
         <Contact />
         <Footer />
+        <Soundscape />
       </div>
     </>
   );
