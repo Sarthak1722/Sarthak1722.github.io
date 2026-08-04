@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || "YOUR_SERVICE_ID";
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
-const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || "YOUR_PUBLIC_KEY";
+const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || "service_hukevoq";
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_ka5exdv";
+const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || "8AsB-u5IenBiLPRMz";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -11,7 +11,7 @@ const Contact = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [state, setState] = useState({ loading: false, success: false, error: false });
+  const [state, setState] = useState({ loading: false, success: false, error: false, errorMessage: "" });
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -40,7 +40,7 @@ const Contact = () => {
     e.preventDefault();
     
     // Clear submission feedback
-    setState({ loading: false, success: false, error: false });
+    setState({ loading: false, success: false, error: false, errorMessage: "" });
 
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -49,17 +49,28 @@ const Contact = () => {
     }
 
     setErrors({});
-    setState({ loading: true, success: false, error: false });
+    setState({ loading: true, success: false, error: false, errorMessage: "" });
+
+    const templateParams = {
+      from_name: `${firstName.trim()} ${lastName.trim()}`,
+      first_name: firstName.trim(),
+      last_name: lastName.trim(),
+      from_email: email.trim(),
+      reply_to: email.trim(),
+      message: message.trim(),
+    };
 
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY);
-      setState({ loading: false, success: true, error: false });
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      setState({ loading: false, success: true, error: false, errorMessage: "" });
       setFirstName("");
       setLastName("");
       setEmail("");
       setMessage("");
-    } catch {
-      setState({ loading: false, success: false, error: true });
+    } catch (err) {
+      console.error("EmailJS sending error:", err);
+      const msg = err?.text || err?.message || "Connection error. Try emailing me directly.";
+      setState({ loading: false, success: false, error: true, errorMessage: msg });
     }
   };
 
@@ -284,6 +295,8 @@ const Contact = () => {
               <div className="cf-input-wrapper">
                 <input
                   type="text"
+                  name="first_name"
+                  autoComplete="given-name"
                   className={`cf-field-input ${errors.firstName ? "cf-field-input--error" : ""}`}
                   placeholder="First Name"
                   value={firstName}
@@ -308,6 +321,8 @@ const Contact = () => {
               <div className="cf-input-wrapper">
                 <input
                   type="text"
+                  name="last_name"
+                  autoComplete="family-name"
                   className={`cf-field-input ${errors.lastName ? "cf-field-input--error" : ""}`}
                   placeholder="Last Name"
                   value={lastName}
@@ -333,6 +348,7 @@ const Contact = () => {
                 <input
                   type="email"
                   name="from_email"
+                  autoComplete="email"
                   className={`cf-field-input ${errors.email ? "cf-field-input--error" : ""}`}
                   placeholder="What's your email?"
                   value={email}
@@ -387,7 +403,7 @@ const Contact = () => {
               )}
               {state.error && (
                 <p className="cf-status cf-status--error">
-                  ✕ Connection error. Try emailing me directly.
+                  ✕ {state.errorMessage || "Connection error. Try emailing me directly."}
                 </p>
               )}
 

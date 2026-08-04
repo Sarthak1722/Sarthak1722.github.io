@@ -101,7 +101,7 @@ export const myProjects = [
     desc: 'Blogging Service is a high-throughput microservices blog engine designed for asynchronous content publishing, real-time search indexing, and low-latency discovery across thousands of posts.',
     subdesc:
       'Engineered in Go, Kafka, and Elasticsearch, containerized with Docker, and deployed on Kubernetes. Uses an async queue to decouple blog writes from search indexing, keeping the API responsive under load.',
-    href: 'https://github.com/Sarthak1722',
+    href: 'https://chronicle-aiso.onrender.com/',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
     logoStyle: {

@@ -8,18 +8,23 @@ const BentoModal = ({ isOpen, onClose, title, category, date, readTime, tags, ch
     };
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
       window.addEventListener("keydown", handleKeyDown);
+
+      return () => {
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+        document.body.style.touchAction = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
     }
-    return () => {
-      document.body.style.overflow = "unset";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
   }, [isOpen, onClose]);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 md:p-10 overscroll-contain">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}

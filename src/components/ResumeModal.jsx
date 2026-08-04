@@ -1,32 +1,46 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ResumeModal = ({ isOpen, onClose }) => {
+  const iframeRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") onClose();
     };
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
       window.addEventListener("keydown", handleKeyDown);
+
+      // Focus iframe after modal opens so scrolling targets the resume
+      const timer = setTimeout(() => {
+        iframeRef.current?.focus();
+      }, 100);
+
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+        document.body.style.touchAction = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
     }
-    return () => {
-      document.body.style.overflow = "unset";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
   }, [isOpen, onClose]);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 md:p-8 overscroll-contain">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/85 backdrop-blur-md"
+            className="absolute inset-0 bg-black/80 backdrop-blur-md"
           />
 
           {/* Modal Container */}
@@ -35,10 +49,10 @@ const ResumeModal = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 30 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="relative w-full max-w-5xl h-[88vh] bg-zinc-950/90 border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col z-10"
+            className="relative w-full max-w-5xl h-[88vh] bg-zinc-950/85 backdrop-blur-2xl border border-white/15 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col z-10"
           >
             {/* Header */}
-            <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
+            <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-white/[0.03] backdrop-blur-md">
               <div className="flex items-center gap-3">
                 <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20 font-semibold text-sm">
                   📄
@@ -81,6 +95,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             {/* PDF Iframe Viewer */}
             <div className="flex-grow bg-black/40 p-2 sm:p-4">
               <iframe
+                ref={iframeRef}
                 src="/docs/Sarthak_CV.pdf#toolbar=0"
                 className="w-full h-full rounded-lg border border-white/5"
                 title="Sarthak Fulzele Resume"
