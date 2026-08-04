@@ -7,14 +7,19 @@
   Engineered with React, Three.js, React Three Fiber, Tailwind CSS, and Framer Motion — featuring real-time blog auto-sync with <a href="https://chronicle-aiso.onrender.com/">Chronicle Engine</a>.
 </p>
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Portfolio-Sarthak.dev-8B5CF6?style=for-the-badge&logoColor=white)](https://sarthak1722.github.io)
-[![Repository](https://img.shields.io/badge/GitHub-Sarthak1722.github.io-181717?style=for-the-badge&logo=github)](https://github.com/Sarthak1722/Sarthak1722.github.io)
-[![License](https://img.shields.io/badge/License-MIT-blue.style=for-the-badge)](LICENSE)
+<p align="center">
+  <a href="https://sarthak1722.github.io">
+    <img src="https://img.shields.io/badge/🌐_Live_Portfolio-Sarthak.dev-8B5CF6?style=for-the-badge&logoColor=white" alt="Live Portfolio" />
+  </a>
+  <a href="https://github.com/Sarthak1722/Sarthak1722.github.io">
+    <img src="https://img.shields.io/badge/GitHub-Sarthak1722.github.io-181717?style=for-the-badge&logo=github" alt="Repository" />
+  </a>
+  <a href="https://github.com/Sarthak1722/Sarthak1722.github.io/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
+  </a>
+</p>
 
-<br />
-
-<!-- Technology Badges -->
-p>
+<p align="center">
   <img src="https://img.shields.io/badge/React_18-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
   <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white" alt="Three.js" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
@@ -35,17 +40,31 @@ p>
 
 ---
 
-## 📸 Portfolio Preview & UI Gallery
+## 📸 Interactive UI Gallery & Showcase
 
 <div align="center">
 
-| 3D Interactive Hero Experience | Featured Distributed Systems Projects |
-| :---: | :---: |
-| ![Hero 3D Showcase](public/assets/spotlight1.png) <br /> *3D Floating Canvas with GLTF Models & Audio Soundscapes* | ![Featured Projects](public/assets/spotlight2.png) <br /> *Interactive 3D Laptop Preview & Video Spotlights* |
+### 🌌 Hero Section & 3D Interactive Canvas
+![Home & Hero Section](public/ui/home.png)
+*3D Floating Developer Canvas featuring Three.js, GLTF Models, Interactive Camera & Soundscapes*
 
-| Beyond Code Memory Journal | Auto-Synced Chronicle Blog Engine |
+<br />
+
+| 💻 Featured Projects Showcase | 💼 Work Experience Timeline |
 | :---: | :---: |
-| ![Memory Scrapbook](public/assets/spotlight3.png) <br /> *IIT Kharagpur Academic & Neoclassical Piano Studio* | ![Chronicle Blog Sync](public/assets/spotlight4.png) <br /> *Live Auto-Synced Articles from Chronicle API* |
+| ![Featured Projects](public/ui/projects.png) <br /> *Interactive 3D Laptop Previews & Video Spotlights* | ![Experience Section](public/ui/experience.png) <br /> *Qurve-AI, Deakin University & IIT KGP Leadership* |
+
+<br />
+
+| 🛠️ Interactive Tech Stack Grid | 🎨 Beyond Code Memory Journal |
+| :---: | :---: |
+| ![Tech Stack](public/ui/techstack.png) <br /> *Modern Interactive Skills Grid with 3D Assets* | ![Beyond Code Section](public/ui/beyondcode.png) <br /> *Memory Scrapbook, Neoclassical Piano & Live Chronicle Sync* |
+
+<br />
+
+| 📩 Interactive Contact Form | 🌐 Footer & Social Connections |
+| :---: | :---: |
+| ![Contact Form](public/ui/contact.png) <br /> *Direct Inbox EmailJS Contact Form* | ![Footer Section](public/ui/footer.png) <br /> *Footer & Social Links* |
 
 </div>
 
@@ -129,7 +148,8 @@ Sarthak1722.github.io/
 │   ├── assets/               # SVG icons, company logos & spotlights
 │   ├── images/memories/      # Scrapbook photos, piano covers & fallbacks
 │   ├── models/               # Transformed 3D GLTF models
-│   └── textures/project/     # Project MP4 demo videos
+│   ├── textures/project/     # Project MP4 demo videos
+│   └── ui/                   # High-resolution website UI screenshots
 ├── src/
 │   ├── assets/               # Component visual assets
 │   ├── components/           # Reusable UI (MemoryAlbum, PianoPlayer, HeroCamera, etc.)
