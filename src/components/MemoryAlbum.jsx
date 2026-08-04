@@ -15,7 +15,22 @@ const SHORT = {
 const SWIPE_THRESHOLD = 50;
 
 const MemoryCardContent = ({ memory, onOpenAbstract }) => {
+  const defaultFallback = "/images/memories/langgawd.jpg";
+  const [imgSrc, setImgSrc] = useState(memory.image || defaultFallback);
   const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgSrc(memory.image || defaultFallback);
+    setImgError(false);
+  }, [memory.image]);
+
+  const handleImgError = () => {
+    if (imgSrc !== defaultFallback) {
+      setImgSrc(defaultFallback);
+    } else {
+      setImgError(true);
+    }
+  };
 
   return (
     <div className="bg-[#11111a]/95 rounded-[22px] p-5 sm:p-6 backdrop-blur-xl border border-white/15 flex flex-col lg:flex-row gap-6 items-center relative overflow-hidden shadow-2xl h-auto">
@@ -29,28 +44,58 @@ const MemoryCardContent = ({ memory, onOpenAbstract }) => {
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-amber-100/40 backdrop-blur-sm border border-amber-200/30 rotate-[-1deg] shadow-sm z-20" />
 
           {/* Photo Container */}
-          <div className="w-full aspect-[4/3] sm:aspect-square bg-gradient-to-br from-neutral-800 to-neutral-950 rounded-sm overflow-hidden relative flex items-center justify-center border border-black/20">
-            {!imgError ? (
-              <img
-                src={memory.image}
-                alt={memory.title}
-                onError={() => setImgError(true)}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            ) : (
-              <div className="w-full h-full p-4 flex flex-col items-center justify-center text-center bg-gradient-to-tr from-purple-950/40 via-neutral-900 to-blue-950/40">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-2 text-2xl border border-white/20">
-                  📷
+          {memory.href ? (
+            <a
+              href={memory.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block w-full aspect-[4/3] sm:aspect-square bg-gradient-to-br from-neutral-800 to-neutral-950 rounded-sm overflow-hidden relative flex items-center justify-center border border-black/20 cursor-pointer"
+            >
+              {!imgError ? (
+                <img
+                  src={imgSrc}
+                  alt={memory.title}
+                  onError={handleImgError}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-full p-4 flex flex-col items-center justify-center text-center bg-gradient-to-tr from-purple-950/40 via-neutral-900 to-blue-950/40">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-2 text-2xl border border-white/20">
+                    ✍️
+                  </div>
+                  <span className="text-xs font-semibold text-purple-200 line-clamp-1">
+                    {memory.imageCaption || memory.title}
+                  </span>
                 </div>
-                <span className="text-xs font-semibold text-purple-200 line-clamp-1">
-                  {memory.imageCaption || memory.title}
-                </span>
-                <span className="text-[10px] text-gray-400 mt-1.5 font-mono px-2 py-0.5 rounded bg-black/50 border border-white/10">
-                  Drop image to: public{memory.image}
+              )}
+              {/* Overlay hover badge */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="bg-purple-600/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-purple-400/40 shadow-lg">
+                  Open on Chronicle ↗
                 </span>
               </div>
-            )}
-          </div>
+            </a>
+          ) : (
+            <div className="w-full aspect-[4/3] sm:aspect-square bg-gradient-to-br from-neutral-800 to-neutral-950 rounded-sm overflow-hidden relative flex items-center justify-center border border-black/20">
+              {!imgError ? (
+                <img
+                  src={imgSrc}
+                  alt={memory.title}
+                  onError={handleImgError}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-full p-4 flex flex-col items-center justify-center text-center bg-gradient-to-tr from-purple-950/40 via-neutral-900 to-blue-950/40">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-2 text-2xl border border-white/20">
+                    📷
+                  </div>
+                  <span className="text-xs font-semibold text-purple-200 line-clamp-1">
+                    {memory.imageCaption || memory.title}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Polaroid Handwritten Style Footer */}
           <div className="pt-3 px-1 flex items-center justify-between">
@@ -58,7 +103,7 @@ const MemoryCardContent = ({ memory, onOpenAbstract }) => {
               {memory.imageCaption || memory.title}
             </span>
             <span className="text-[10px] font-bold text-purple-200 bg-purple-900/60 border border-purple-500/30 px-1.5 py-0.5 rounded">
-              {memory.period ? memory.period.split("–")[0] : "NCA"}
+              {memory.polaroidDate || (memory.period ? memory.period.split("–")[0].trim() : "Blog")}
             </span>
           </div>
         </div>
@@ -113,7 +158,7 @@ const MemoryCardContent = ({ memory, onOpenAbstract }) => {
         )}
 
         {/* Documents & Action Row */}
-        {(memory.documents || memory.hasAbstractModal) && (
+        {(memory.documents || memory.hasAbstractModal || memory.href) && (
           <div className="flex flex-wrap items-center gap-2 pt-2 mt-auto border-t border-white/5">
 
             {/* Document attachment chips */}
@@ -140,6 +185,20 @@ const MemoryCardContent = ({ memory, onOpenAbstract }) => {
                 <span>🔬</span>
                 <span>Read Abstract</span>
               </button>
+            )}
+
+            {/* Read on Chronicle button */}
+            {memory.href && (
+              <a
+                href={memory.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-auto flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-lg shadow-purple-500/25 border border-purple-400/30 transition-all duration-300 hover:scale-105 cursor-pointer"
+              >
+                <span>📝</span>
+                <span>Read Article on Chronicle</span>
+                <span className="text-[11px]">↗</span>
+              </a>
             )}
           </div>
         )}

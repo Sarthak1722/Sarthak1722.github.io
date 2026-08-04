@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import MemoryAlbum from "../components/MemoryAlbum";
 import BentoModal from "../components/BentoModal";
 import { memoryChapters, beyondCodeStats } from "../constants";
+import useChronicleBlogs from "../hooks/useChronicleBlogs";
 
 const textVariant = (delay = 0) => ({
   hidden: { y: -30, opacity: 0 },
@@ -25,6 +26,28 @@ const staggerContainer = {
 
 const BeyondCode = () => {
   const [activeAbstractModal, setActiveAbstractModal] = useState(null);
+  const { blogs, loading: blogsLoading } = useChronicleBlogs();
+
+  // Dynamically attach live Chronicle blogs to the 'chronicles' chapter
+  const chaptersToDisplay = memoryChapters.map((chapter) => {
+    if (chapter.id === "chronicles") {
+      const liveMemories = blogs && blogs.length > 0 ? blogs : chapter.memories;
+      return {
+        ...chapter,
+        badge: blogs && blogs.length > 0 ? `${blogs.length} Published 🚀` : chapter.badge,
+        memories: liveMemories,
+      };
+    }
+    return chapter;
+  });
+
+  // Dynamically update stats block with live blog count when available
+  const statsToDisplay = blogs && blogs.length > 0
+    ? [
+        ...beyondCodeStats.slice(0, 3),
+        { label: "Live Chronicle Articles", value: `${blogs.length} Articles ✍️` },
+      ]
+    : beyondCodeStats;
 
   return (
     <motion.section
@@ -47,14 +70,14 @@ const BeyondCode = () => {
 
       {/* Main Memory Scrapbook Album */}
       <MemoryAlbum
-        chapters={memoryChapters}
+        chapters={chaptersToDisplay}
         onOpenAbstract={(mem) => setActiveAbstractModal(mem)}
       />
 
       {/* Quick Summary Highlights Bar */}
       <div className="mt-12 card-border rounded-2xl p-6 bg-gradient-to-r from-purple-950/30 via-black-100 to-blue-950/30 border-white/10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          {beyondCodeStats.map((stat, i) => (
+          {statsToDisplay.map((stat, i) => (
             <div key={i} className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
               <p className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
                 {stat.value}

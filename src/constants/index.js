@@ -407,6 +407,7 @@ export const memoryChapters = [
         id: "iit-kgp",
         title: "Bachelors & Masters of Technology, IIT Kharagpur",
         period: "2021 – 2026",
+        polaroidDate: "4th July 2026",
         location: "IIT Kharagpur, India",
         badge: "Tier-1 Premier Institution",
         image: "/images/memories/iitkgp.jpg",
