@@ -14,9 +14,6 @@
   <a href="https://github.com/Sarthak1722/Sarthak1722.github.io">
     <img src="https://img.shields.io/badge/GitHub-Sarthak1722.github.io-181717?style=for-the-badge&logo=github" alt="Repository" />
   </a>
-  <a href="https://github.com/Sarthak1722/Sarthak1722.github.io/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
-  </a>
 </p>
 
 <p align="center">
@@ -173,11 +170,6 @@ Sarthak1722.github.io/
 - 🔬 **AI Research & Engineering**: Medical VQA multimodal LLaVA pipelines at Deakin University & voice chatbot architecture at Qurve-AI.
 - 🎹 **Harmonium & Piano**: NCA Level 6 Distinction in Harmonium & Neoclassical Piano Improvisation.
 
----
-
-## 📄 License
-
-Distributed under the **MIT License**. See `LICENSE` for details.
 
 <div align="center">
   <sub>Built with care & precision by <a href="https://github.com/Sarthak1722">Sarthak Fulzele</a> © 2026</sub>
